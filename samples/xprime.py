@@ -12,7 +12,7 @@ backend = "https://backend.xprime.tv/primebox?name=Cyberpunk%3A+Edgerunners&year
 
 # Get encrypted data
 encrypted = requests.get(backend, headers=HEADERS).text
-print(encrypted)
+
 # Decrypt
 decrypted = requests.post(f"{API}/dec-xprime", json={"text": encrypted}).json()
 
