@@ -8,9 +8,10 @@ HEADERS = {
 API = "https://enc-dec.app/api"
 
 # --- Cyberpunk Edgerunners ---
+# Note that there are different servers, find them here: https://backend.xprime.tv/servers
 backend = "https://backend.xprime.tv/primebox?name=Cyberpunk%3A+Edgerunners&year=2022&imdb=tt12590266&season=1&episode=1"
 
-# Get encrypted data
+# Get encrypted text
 encrypted = requests.get(backend, headers=HEADERS).text
 
 # Decrypt
