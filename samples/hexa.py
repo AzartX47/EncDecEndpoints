@@ -8,8 +8,8 @@ HEADERS = {
 
 API = "https://enc-dec.app/api"
 
-# Tv format: <https://themoviedb.hexa.watch/api/tmdb/tv/{tmdb_id}/season/{season_number}/episode/{episode_number}/images>
 # Movie format: <https://themoviedb.hexa.watch/api/tmdb/movie/{tmdb_id}/images>
+# Tv format: <https://themoviedb.hexa.watch/api/tmdb/tv/{tmdb_id}/season/{season_number}/episode/{episode_number}/images>
 
 # --- Cyberpunk Edgerunners ---
 url = "https://themoviedb.hexa.watch/api/tmdb/tv/105248/season/1/episode/1/images"

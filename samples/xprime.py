@@ -9,8 +9,8 @@ HEADERS = {
 API = "https://enc-dec.app/api"
 
 # Note that there are different servers, find them here: https://backend.xprime.tv/servers
-# Tv format: <https://backend.xprime.tv/{server}?name={title}&year={year}&id={tmdb_id}&imdb={imdb_id}&season={season_number}&episode={episode_number}>
 # Movie format: <https://backend.xprime.tv/{server}?name={title}&year={year}&id={tmdb_id}&imdb={imdb_id}>
+# Tv format: <https://backend.xprime.tv/{server}?name={title}&year={year}&id={tmdb_id}&imdb={imdb_id}&season={season_number}&episode={episode_number}>
 
 # --- Cyberpunk Edgerunners ---
 url = "https://backend.xprime.tv/primebox?name=Cyberpunk%3A+Edgerunners&year=2022&id=105248&imdb=tt12590266&season=1&episode=1"
