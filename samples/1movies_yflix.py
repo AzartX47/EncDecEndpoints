@@ -12,7 +12,7 @@ def encrypt(text):
     return requests.get(f"{API}/enc-movies-flix?text={text}").json()["result"]
 
 def decrypt(text):
-    return requests.get(f"{API}/dec-movies-flix?text={text}").json()["result"]
+    return requests.post(f"{API}/dec-movies-flix", json={"text": text}).json()["result"]
 
 def parse_html(html):
     return requests.post(f"{API}/parse-html", json={"text": html}).json()["result"]
