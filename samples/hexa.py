@@ -8,6 +8,7 @@ HEADERS = {
 
 API = "https://enc-dec.app/api"
 
+# Also works with https://flixer.su/
 # Movie format: <https://themoviedb.hexa.watch/api/tmdb/movie/{tmdb_id}/images>
 # Tv format: <https://themoviedb.hexa.watch/api/tmdb/tv/{tmdb_id}/season/{season_number}/episode/{episode_number}/images>
 
