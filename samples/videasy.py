@@ -38,7 +38,7 @@ url = "https://api.videasy.net/myflixerzupcloud/sources-with-title?title=Cyberpu
 
 # Get encrypted text
 enc_data = requests.get(url, headers=HEADERS).text
-print(enc_data)
+
 # Decrypt
 decrypted = requests.post(f"{API}/dec-videasy", json={"text": enc_data, "id": tmdb_id}).json()['result']
 
