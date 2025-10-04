@@ -14,7 +14,7 @@ Neon       Original     https://api.videasy.net/myflixerzupcloud/sources-with-ti
 Sage       Original     https://api.videasy.net/1movies/sources-with-title
 Cypher     Original     https://api.videasy.net/moviebox/sources-with-title
 Yoru       Original     https://api.videasy.net/cdn/sources-with-title  [MOVIE ONLY]
-Reyna      Original     https://api2.videasy.net/primewire/sources-with-title
+Reyna      Original     https://api.videasy.net/primewire/sources-with-title
 Omen       Original     https://api.videasy.net/onionplay/sources-with-title
 Breach     Original     https://api.videasy.net/m4uhd/sources-with-title
 Vyse       Original     https://api.videasy.net/hdmovie/sources-with-title
@@ -22,11 +22,13 @@ Killjoy    German       https://api.videasy.net/meine/sources-with-title?languag
 Harbor     Italian      https://api.videasy.net/meine/sources-with-title?language=italian
 Chamber    French       https://api.videasy.net/meine/sources-with-title?language=french  [MOVIE ONLY]
 Fade       Hindi        https://api.videasy.net/hdmovie/sources-with-title
-Gekko      Latin        https://api2.videasy.net/cuevana-latino/sources-with-title
-Kayo       Spanish      https://api2.videasy.net/cuevana-spanish/sources-with-title
+Gekko      Latin        https://api.videasy.net/cuevana-latino/sources-with-title
+Kayo       Spanish      https://api.videasy.net/cuevana-spanish/sources-with-title
 Raze       Portugese    https://api.videasy.net/superflix/sources-with-title
-Phoenix    Portugese    https://api2.videasy.net/overflix/sources-with-title
+Phoenix    Portugese    https://api.videasy.net/overflix/sources-with-title
 Astra      Portugese    https://api.videasy.net/visioncine/sources-with-title
+
+** Note: Use api.videasy.net or api2.videasy.net
 '''
 
 # Movie format: <https://api.videasy.net/{server}/sources-with-title?title={title}&mediaType=movie&year={year}&tmdbId={tmdb_id}&imdbId={imdb_id}>
