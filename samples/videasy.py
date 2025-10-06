@@ -31,12 +31,12 @@ Astra      Portugese    https://api.videasy.net/visioncine/sources-with-title
 ** Note: Use api.videasy.net or api2.videasy.net
 '''
 
-# Movie format: <https://api.videasy.net/{server}/sources-with-title?title={title}&mediaType=movie&year={year}&tmdbId={tmdb_id}&imdbId={imdb_id}>
-# Tv format: <https://api.videasy.net/{server}/sources-with-title?title={title}&mediaType=tv&year={year}&tmdbId={tmdb_id}&imdbId={imdb_id}&episodeId={episode_number}&seasonId={season_number}>
+# Movie format: <https://api.videasy.net/{server}/sources-with-title?title={title}&mediaType=movie&year={year}&tmdbId={tmdb_id}>
+# Tv format: <https://api.videasy.net/{server}/sources-with-title?title={title}&mediaType=tv&year={year}&tmdbId={tmdb_id}&episodeId={episode_number}&seasonId={season_number}>
 
 # --- Cyberpunk Edgerunners ---
-tmdb_id = "105248"
-url = "https://api.videasy.net/myflixerzupcloud/sources-with-title?title=Cyberpunk%253A%2520Edgerunners&mediaType=tv&year=2022&tmdbId=105248&imdbId=tt12590266&episodeId=1&seasonId=1"
+tmdb_id = "105248" # Only works with TMDB
+url = "https://api.videasy.net/myflixerzupcloud/sources-with-title?title=Cyberpunk%253A%2520Edgerunners&mediaType=tv&year=2022&tmdbId=105248&episodeId=1&seasonId=1"
 
 # Get encrypted text
 enc_data = requests.get(url, headers=HEADERS).text
