@@ -12,8 +12,11 @@ API = "https://enc-dec.app/api"
 # Movie format: <https://backend.xprime.tv/{server}?name={title}&year={year}&id={tmdb_id}&imdb={imdb_id}>
 # Tv format: <https://backend.xprime.tv/{server}?name={title}&year={year}&id={tmdb_id}&imdb={imdb_id}&season={season_number}&episode={episode_number}>
 
+# Generate turnstile token
+token = requests.get(f"{API}/enc-xprime").json()['result']
+
 # --- Cyberpunk Edgerunners ---
-url = "https://backend.xprime.tv/primebox?name=Cyberpunk%3A+Edgerunners&year=2022&id=105248&imdb=tt12590266&season=1&episode=1"
+url = f"https://backend.xprime.tv/primebox?name=Cyberpunk%3A+Edgerunners&year=2022&id=105248&imdb=tt12590266&season=1&episode=1&turnstile={token}"
 
 # Get encrypted text
 encrypted = requests.get(url, headers=HEADERS).text
