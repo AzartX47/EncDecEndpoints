@@ -18,6 +18,5 @@ encrypted = requests.get(media, headers=HEADERS).json()['result']
 
 # Decrypt
 decrypted = requests.post(f"{API}/dec-mega", json={"text": encrypted, "agent": HEADERS["User-Agent"]}).json()['result']
-
 print(f"\n{'-'*25} Decrypted Data {'-'*25}\n")
 print(decrypted)

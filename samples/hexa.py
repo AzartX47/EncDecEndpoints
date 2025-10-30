@@ -13,17 +13,23 @@ API = "https://enc-dec.app/api"
 # Tv format: <https://themoviedb.hexa.watch/api/tmdb/tv/{tmdb_id}/season/{season_number}/episode/{episode_number}/images>
 
 # --- Cyberpunk Edgerunners ---
-url = "https://themoviedb.hexa.watch/api/tmdb/tv/105248/season/1/episode/1/images"
+title = "Cyberpunk: Edgerunners"
+type = "tv"
+year = "2022"
+imdb_id = "tt12590266"
+tmdb_id = "105248"
+season = "1"
+episode = "1"
 
 # Generate 32-byte hex key
 key = get_random_bytes(32).hex()
 HEADERS["X-Api-Key"] = key
 
 # Get encrypted text
+url = f"https://themoviedb.hexa.watch/api/tmdb/tv/{tmdb_id}/season/{season}/episode/{episode}/images"
 encrypted = requests.get(url, headers=HEADERS).text
 
 # Decrypt
 decrypted = requests.post(f"{API}/dec-hexa", json={"text": encrypted, "key": key}).json()['result']
-
 print(f"\n{'-'*25} Decrypted Data {'-'*25}\n")
 print(decrypted)

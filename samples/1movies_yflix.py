@@ -15,6 +15,7 @@ def decrypt(text):
     return requests.post(f"{API}/dec-movies-flix", json={"text": text}).json()["result"]
 
 def parse_html(html):
+    # This is for proof of concept, please implement your own HTML parser
     return requests.post(f"{API}/parse-html", json={"text": html}).json()["result"]
 
 def get_json(url):
@@ -43,6 +44,7 @@ embed_resp = get_json(f"{YFLIX_AJAX}/links/view?id={lid}&_={enc_lid}")
 encrypted = embed_resp["result"]
 
 # Decrypt
+# Note: subtitles url is passed as urlencoded sub.list parameter
 decrypted = decrypt(encrypted)
 print(f"\n{'-'*25} Decrypted Data {'-'*25}\n")
 print(decrypted)

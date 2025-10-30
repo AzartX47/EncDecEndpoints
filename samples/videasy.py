@@ -1,4 +1,5 @@
 import requests
+from urllib.parse import quote
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
@@ -15,7 +16,7 @@ Sage       Original     https://api.videasy.net/1movies/sources-with-title
 Cypher     Original     https://api.videasy.net/moviebox/sources-with-title
 Yoru       Original     https://api.videasy.net/cdn/sources-with-title  [MOVIE ONLY]
 Reyna      Original     https://api.videasy.net/primewire/sources-with-title
-Omen       Original     https://api.videasy.net/onionplay/sources-with-title
+Omen       Original     https://api.videasy.net/onionplay/sources-with-titlequote
 Breach     Original     https://api.videasy.net/m4uhd/sources-with-title
 Vyse       Original     https://api.videasy.net/hdmovie/sources-with-title
 Killjoy    German       https://api.videasy.net/meine/sources-with-title?language=german
@@ -35,14 +36,19 @@ Astra      Portugese    https://api.videasy.net/visioncine/sources-with-title
 # Tv format: <https://api.videasy.net/{server}/sources-with-title?title={title}&mediaType=tv&year={year}&tmdbId={tmdb_id}&episodeId={episode_number}&seasonId={season_number}>
 
 # --- Cyberpunk Edgerunners ---
-tmdb_id = "105248" # Only works with TMDB
-url = "https://api.videasy.net/myflixerzupcloud/sources-with-title?title=Cyberpunk%253A%2520Edgerunners&mediaType=tv&year=2022&tmdbId=105248&episodeId=1&seasonId=1"
+title = "Cyberpunk: Edgerunners"
+type = "tv"
+year = "2022"
+imdb_id = "tt12590266"
+tmdb_id = "105248"
+season = "1"
+episode = "1"
 
 # Get encrypted text
+url = f"https://api.videasy.net/myflixerzupcloud/sources-with-title?title={quote(title)}&mediaType={type}&year={year}&tmdbId={tmdb_id}&episodeId={episode}&seasonId={season}"
 enc_data = requests.get(url, headers=HEADERS).text
 
 # Decrypt
 decrypted = requests.post(f"{API}/dec-videasy", json={"text": enc_data, "id": tmdb_id}).json()['result']
-
 print(f"\n{'-'*25} Decrypted Data {'-'*25}\n")
 print(decrypted)

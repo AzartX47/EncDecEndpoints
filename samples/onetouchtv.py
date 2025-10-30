@@ -16,6 +16,5 @@ encrypted = requests.get(content_url, headers=HEADERS).text
 
 # Decrypt
 decrypted = requests.post(f"{API}/dec-onetouchtv", json={"text": encrypted}).json()['result']
-
 print(f"\n{'-'*25} Decrypted Data {'-'*25}\n")
 print(decrypted)
