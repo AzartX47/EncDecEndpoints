@@ -23,7 +23,7 @@ subtitle_response = requests.get(url, headers=HEADERS).json()
 
 # Decrypt first subtitle content
 subtitle = subtitle_response[0]['src']
-subtitle_decrypt = requests.post(f"{API}/dec-kisskh", json={"text": subtitle}).text
+subtitle_decrypt = requests.post(f"{API}/dec-kisskh", json={"url": subtitle}).text
 
 print(f"\n{'-'*25} Sample Response Data {'-'*25}\n")
 print("Video:\n", video_response)
