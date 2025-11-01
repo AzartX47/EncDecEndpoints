@@ -21,6 +21,11 @@ sub_key = requests.get(f"{API}/enc-kisskh?text={content_id}&type=sub").json()['r
 url = f"https://kisskh.do/api/Sub/{content_id}?kkey={sub_key}"
 subtitle_response = requests.get(url, headers=HEADERS).json()
 
+# Decrypt first subtitle content
+subtitle = subtitle_response[0]['src']
+subtitle_decrypt = requests.post(f"{API}/dec-kisskh", json={"text": subtitle}).text
+
 print(f"\n{'-'*25} Sample Response Data {'-'*25}\n")
-print(video_response)
-print(subtitle_response)
+print("Video:\n", video_response)
+print("\nSubtitle:\n", subtitle_response)
+print("\nDecrypted Subtitle:\n", subtitle_decrypt[:200])

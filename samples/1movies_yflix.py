@@ -15,7 +15,6 @@ def decrypt(text):
     return requests.post(f"{API}/dec-movies-flix", json={"text": text}).json()["result"]
 
 def parse_html(html):
-    # This is for proof of concept, please implement your own HTML parser
     return requests.post(f"{API}/parse-html", json={"text": html}).json()["result"]
 
 def get_json(url):
