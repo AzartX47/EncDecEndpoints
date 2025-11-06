@@ -1,4 +1,5 @@
 import requests
+import json
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
@@ -24,7 +25,6 @@ https://mapple.uk/watch/movie/181812 - Movie
 https://mapple.uk/watch/tv/105248/1-1 - TV Show Season-Episode
 
 Sources:
-
 Mapple 4K - mapple
 Sakura - sakura
 Pinecone - alfa
@@ -51,6 +51,6 @@ payload = [{
 
 # Get data and parse streams
 response = requests.post(f"https://mapple.uk/watch/tv/{tmdb_id}/{season}-{episode}", json=payload, headers=HEADERS).text
-strams_data = response.split("\n")[1].replace("1:", "")
+streams_data = json.loads(response.split("\n")[1].replace("1:", ""))
 print(f"\n{'-'*25} Streams Data {'-'*25}\n")
-print(strams_data)
+print(streams_data) # To load streams set referer to 'https://mapple.uk/'
