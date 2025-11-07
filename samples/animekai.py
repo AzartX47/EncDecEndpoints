@@ -30,7 +30,7 @@ episodes_resp = get_json(f"{KAI_AJAX}/episodes/list?ani_id={content_id}&_={enc_i
 episodes = parse_html(episodes_resp["result"])
 
 # Pick first episode token to load servers
-token = episodes["1"]["token"]
+token = episodes["1"]["1"]["token"]
 enc_token = encrypt(token)
 servers_resp = get_json(f"{KAI_AJAX}/links/list?token={token}&_={enc_token}")
 servers = parse_html(servers_resp["result"])

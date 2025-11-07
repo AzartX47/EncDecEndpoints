@@ -31,7 +31,7 @@ episodes_resp = get_json(f"{YFLIX_AJAX}/episodes/list?id={content_id}&_={enc_id}
 episodes = parse_html(episodes_resp["result"])
 
 # Pick first episode eid to load servers
-eid = episodes["1"]["eid"]
+eid = episodes["1"]["1"]["eid"]
 enc_eid = encrypt(eid)
 servers_resp = get_json(f"{YFLIX_AJAX}/links/list?eid={eid}&_={enc_eid}")
 servers = parse_html(servers_resp["result"])
