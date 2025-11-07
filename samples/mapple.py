@@ -5,7 +5,7 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
     "Connection": "keep-alive",
     "Referer": "https://mapple.uk/",
-    "Next-Action": "4067783bff09863112a9a148953f77cd8fa3d8d72a" # Necessary header
+    "Next-Action": "40c2896f5f22d9d6342e5a6d8f4d8c58d69654bacd" # Necessary header
 }
 
 API = "https://enc-dec.app/api"
