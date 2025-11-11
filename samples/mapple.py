@@ -10,14 +10,12 @@ HEADERS = {
 
 API = "https://enc-dec.app/api"
 
-# --- Arcane ---
-title = "Arcane"
-type = "tv"
-year = "2021"
-imdb_id = "tt11126994"
-tmdb_id = "94605"
-season = "1"
-episode = "1"
+# --- Shawshank Redemption ---
+title = "Shawshank Redemption"
+type = "movie"
+year = "1994"
+imdb_id = "tt0111161"
+tmdb_id = "278"
 
 '''
 Sample API calls:
@@ -43,14 +41,14 @@ session_id = session_res['result']['sessionId']
 # Build sample payload for tv series
 payload = [{
     "mediaId": tmdb_id,
-    "mediaType": "tv",
-    "tv_slug": f"{season}-{episode}",
+    "mediaType": "movie",
+    "tv_slug": "",
     "source": "mapple",
     "sessionId": session_id
 }]
 
 # Get data and parse streams
-response = requests.post(f"https://mapple.uk/watch/tv/{tmdb_id}/{season}-{episode}", json=payload, headers=HEADERS).text
+response = requests.post(f"https://mapple.uk/watch/movie/{tmdb_id}", json=payload, headers=HEADERS).text
 streams_data = json.loads(response.split("\n")[1].replace("1:", ""))
 print(f"\n{'-'*25} Streams Data {'-'*25}\n")
 print(streams_data) # To load streams set referer to 'https://mapple.uk/'
