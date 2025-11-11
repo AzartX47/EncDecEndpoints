@@ -28,6 +28,24 @@ https://api.smashystream.top/api/v1/__SERVER__/__IMDB_ID__/__TMDB_ID__/__S__/__E
 * Also note that /dec-vidstack endpoint uses 'type' field, if not specified defaults to '1'
 '''
 
+def listParser(text):
+    items = []
+    result = {}
+
+    text = text.strip().rstrip(',').replace(' or ', ',')
+    for s in text.split(','):
+        if s := s.strip():
+            items.append(s)
+    
+    for s in items:
+        if s.startswith('[') and ']' in s:
+            key, val = s[1:].split(']', 1)
+            result[key.strip()] = val.strip()
+        else:
+            result.setdefault('default', []).append(s)
+
+    return result
+
 # Get token data to load player
 token_data = requests.get(f"{API}/enc-vidstack").json()['result']
 
@@ -55,9 +73,10 @@ response = requests.get(url, headers=HEADERS).json()
 
 # Get encrypted file
 file = response['data']['sources'][0]['file']
-subtitles = response['data'].get('tracks', []) # Extra parsing needed if subs exist
+subtitles = response['data'].get('tracks', "")
 
 # Decrypt
 decrypted = requests.post(f"{API}/dec-vidstack", json={"text": file, "type": "2"}).json()["result"]
 print(f"\n{'-'*25} Type 2 Decrypted Data {'-'*25}\n")
-print(decrypted)
+print(listParser(decrypted))
+print(listParser(subtitles))
